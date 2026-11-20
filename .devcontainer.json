@@ -1,0 +1,8 @@
+{
+  "name": "DevOps Lab",
+  "build": {"dockerfile": "Dockerfile"},
+  "remoteUser": "vscode",
+  "forwardPorts": [8080],
+  "portsAttributes": {"8080": {"label": "Jenkins", "onAutoForward": "notify"}},
+  "postStartCommand": "nohup /usr/local/bin/jenkins --httpListenAddress=127.0.0.1 --httpPort=8080 > /tmp/devops-jenkins.log 2>&1 < /dev/null &"
+}
